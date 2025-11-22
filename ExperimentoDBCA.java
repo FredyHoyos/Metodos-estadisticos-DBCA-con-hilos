@@ -11,7 +11,7 @@ public class ExperimentoDBCA {
     // CONFIGURACIÓN DEL EXPERIMENTO
     // =======================================
     // Número de hilos a probar en el experimento: Puedes agregar más valores al arreglo por ejemplo {1, 2, 4, 8}.
-    static final int[] THREADS = {4}; // Cambia este valor para seleccionar con cuantos hilos va ejecutar
+    static final int[] THREADS = {1}; // Cambia este valor para seleccionar con cuantos hilos va ejecutar
 
     // 1 = Algoritmo de suma de arreglo: Buscar el tiempo que tarda en sumar un arreglo grande de números enteros.
     // 2 = Algoritmo de multiplicación de matrices: Medir el tiempo que tarda en multiplicar dos matrices grandes.
@@ -55,11 +55,11 @@ public class ExperimentoDBCA {
                     break;
                 case 3:
                     // Bloque 3: MonteCarlo
-                    System.out.println("Ordenamiento: " + medir(() -> monteCarloPi(t)) + " ms");
+                    System.out.println("MonteCarlo: " + medir(() -> monteCarloPi(t)) + " ms");
                     break;
                 case 4:
                     // Bloque 4: Fourier
-                    System.out.println("Búsqueda: " + medir(() -> fftParalela(t)) + " ms");
+                    System.out.println("Fourier: " + medir(() -> fftParalela(t)) + " ms");
                     break;
                 default:
 
@@ -70,10 +70,10 @@ public class ExperimentoDBCA {
                     System.out.println("Multiplicación matrices: " + medir(() -> multiplicarMatricesParalelo(t)) + " ms");
 
                     // Bloque 3: MonteCarlo
-                    System.out.println("Ordenamiento: " + medir(() -> monteCarloPi(t)) + " ms");
+                    System.out.println("MonteCarlo: " + medir(() -> monteCarloPi(t)) + " ms");
 
                     // Bloque 4: Fourier
-                    System.out.println("Búsqueda: " + medir(() -> fftParalela(t)) + " ms");
+                    System.out.println("Fourier: " + medir(() -> fftParalela(t)) + " ms");
                     break;
                     
             }
